@@ -19,7 +19,7 @@
     <target name="wsimport-client-TestWebService" depends="wsimport-init">
         <mkdir dir="${build.generated.dir}/jax-wsCache/TestWebService"/>
         <property name="wsdl-TestWebService" location="xml-resources/web-service-references/TestWebService/wsdl/localhost_8080/CodingExerciseOneServer/TestWebService.wsdl"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/TestWebService" destdir="${build.generated.dir}/jax-wsCache/TestWebService" wsdl="${wsdl-TestWebService}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/CodingExerciseOneServer/TestWebService?wsdl" xnocompile="true" xendorsed="true" package="codingexerciseoneclient">
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/TestWebService" destdir="${build.generated.dir}/jax-wsCache/TestWebService" wsdl="${wsdl-TestWebService}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/CodingExerciseOneServer/TestWebService?wsdl" xnocompile="true" xendorsed="true">
             <depends file="${wsdl-TestWebService}"/>
             <produces dir="${build.generated.dir}/jax-wsCache/TestWebService"/>
         </wsimport>
@@ -31,7 +31,7 @@
     </target>
     <target name="wsimport-client-clean-TestWebService" depends="-init-project">
         <delete dir="${build.generated.dir}/jax-wsCache/TestWebService"/>
-        <delete dir="${build.generated.sources.dir}/jax-ws/codingexerciseoneclient"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/server"/>
     </target>
     <target name="wsimport-client-generate" depends="wsimport-client-TestWebService"/>
 </project>
